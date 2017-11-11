@@ -1,9 +1,10 @@
 import React from 'react';
+import SomeOtherComponent from './some-other-component';
 
 const App = (props) => {
   return (
     <div>
-      Hello world.
+      <SomeOtherComponent />
     </div>
   );
 }
