@@ -1,0 +1,33 @@
+{
+  "name": "webpack-2-code-splitting",
+  "version": "0.1.0",
+  "description": "Webpack 2 code splitting fun",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "./node_modules/.bin/webpack",
+    "start": "babel-node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesfiltness/webpack-2-code-splitting.git"
+  },
+  "keywords": [
+    "Webpack"
+  ],
+  "author": "James Filtness",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "history": "^4.7.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
