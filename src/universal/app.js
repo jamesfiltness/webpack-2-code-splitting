@@ -1,12 +1,30 @@
 import React from 'react';
-import SomeOtherComponent from './some-other-component';
 
-const App = (props) => {
-  return (
-    <div>
-      <SomeOtherComponent />
-    </div>
-  );
+export default class App extends React.Component {
+  constructor() {
+    super();
+
+    this.Component = null;
+
+    this.loadOtherComponent = this.loadOtherComponent.bind(this);
+  }
+
+  async loadOtherComponent() {
+    this.Component =
+      await import(
+        /* webpackChunkName: "SomeOtherComponent" */
+        './some-other-component'
+      );
+
+      this.forceUpdate();
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.loadOtherComponent}>Click Me!</button>
+        {this.Component ? <this.Component.default /> : null}
+      </div>
+    );
+  }
 }
-
-export default App

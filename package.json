@@ -4,8 +4,8 @@
   "description": "Webpack 2 code splitting fun",
   "main": "index.js",
   "scripts": {
-    "prestart": "./node_modules/.bin/webpack",
-    "start": "babel-node ./src/server.js"
+    "prestart": "BABEL_ENV=browser ./node_modules/.bin/webpack",
+    "start": "BABEL_ENV=node babel-node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-node": "^1.1.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -26,6 +27,7 @@
     "webpack-bundle-analyzer": "^2.9.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "express": "^4.16.2",
     "history": "^4.7.2",
     "lodash": "^4.17.4",

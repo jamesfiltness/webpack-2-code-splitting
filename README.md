@@ -1,4 +1,4 @@
-# Weback 2 closing splitting with `import()`.
+# Weback 2 code splitting with `import()`.
 
 An experiment to see how Webpack's [`import()`](https://webpack.js.org/api/module-methods/#import-) module method can be used to split code and how that can affect the initial bundle size.
 
@@ -6,3 +6,6 @@ Running npm start initialises an isomorphic React app at `localhost:3000` and th
 
 ### Default bundle without any optimisation
 ![default-without-optimisation](https://i.imgur.com/zjKVaDc.png)
+
+### Basic code splitting
+![basic-code-split](https://i.imgur.com/AYSivkK.png)
