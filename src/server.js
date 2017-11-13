@@ -16,7 +16,7 @@ app.use((req, res) => {
   res.send(`
     <!doctype html>
       <head>
-        <title>React Router 4/Redux boilerplate</title>
+        <title>Universal code splitting with Webpack's import()</title>
       </head>
       <body>
         <div id="app">${html}</div>

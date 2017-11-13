@@ -9,13 +9,19 @@ Running npm start initialises an isomorphic React app at `localhost:3000` and th
 
 ### Basic code splitting using `import()`
 
-The two split bundles are actually larger than the original because they both bundle common libraries (`React` and `React-dom` in this case) See `src/universal/app.js` for details:
+The two split bundles are actually larger than the original because they both bundle common libraries (`React` and `React-dom` in this case) See `src/universal/app.js` for code splitting example:
 
 ![basic-code-split](https://i.imgur.com/AYSivkK.png)
 
-### Common chunks extracted
+### Common chunks extracted: [845a9e3](https://github.com/jamesfiltness/webpack-2-code-splitting/commit/845a9e3d735289eb3968c04fe22669793ef0037d)
 
-Using the `CommonsChunkPlugin` to extract libraries in to a separate chunk. Starting to see some improvements in bundle sizes.
+Using the `CommonsChunkPlugin` to extract libraries in to a separate chunk. Starting to see some improvements in bundle sizes:
 
 ![commons-chunk-plugin](https://i.imgur.com/fed3Gpa.png)
+
+### Analyzing chunks with Webpack Bundle Analyzer
+
+Reduce `SomeOtherComponent` bundle size by only importing what we need from `lodash`
+
+![reduce-lodash-footprint](https://i.imgur.com/PZCAxba.png)
 

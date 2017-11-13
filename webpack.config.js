@@ -23,7 +23,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       minChunks: Infinity,
-    })
+    }),
+    new BundleAnalyzerPlugin(),
   ],
   output: {
     filename: '[name].bundle.js',
