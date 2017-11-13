@@ -4,7 +4,7 @@
   "description": "Webpack 2 code splitting fun",
   "main": "index.js",
   "scripts": {
-    "prestart": "BABEL_ENV=browser ./node_modules/.bin/webpack",
+    "prestart": "BABEL_ENV=browser NODE_ENV=production ./node_modules/.bin/webpack -p",
     "start": "BABEL_ENV=node babel-node ./src/server.js"
   },
   "repository": {

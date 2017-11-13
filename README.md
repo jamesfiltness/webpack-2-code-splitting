@@ -27,3 +27,9 @@ Reduce `SomeOtherComponent` bundle size by only importing what we need from `lod
 
 ### Uglifying has a big impact on bundle size
 ![uglified](https://i.imgur.com/yKVMgUO.png)
+
+### Build for production environment
+
+This has another large impact on the vendor bundle size as development artefacts are not packed in the bundle.
+
+![prod-build](https://i.imgur.com/srJSxez.png)
