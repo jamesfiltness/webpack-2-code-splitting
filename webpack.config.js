@@ -1,8 +1,12 @@
 const path = require("path");
+const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: './src/client.js',
+  entry: {
+    app:  './src/client.js',
+    vendor: ['react', 'react-dom'],
+  },
   module: {
     loaders: [
       {
@@ -15,8 +19,14 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks: Infinity,
+    })
+  ],
   output: {
-    filename: "bundle.js",
-    path: path.join(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    path: path.join(__dirname, 'dist'),
   }
 }

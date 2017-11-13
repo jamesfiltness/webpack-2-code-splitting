@@ -20,7 +20,8 @@ app.use((req, res) => {
       </head>
       <body>
         <div id="app">${html}</div>
-        <script src="http://localhost:3000/bundle.js"></script>
+        <script src="http://localhost:3000/vendor.bundle.js"></script>
+        <script src="http://localhost:3000/app.bundle.js"></script>
       </body>
     </html>
   `);
