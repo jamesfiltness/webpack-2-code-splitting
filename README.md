@@ -25,3 +25,5 @@ Reduce `SomeOtherComponent` bundle size by only importing what we need from `lod
 
 ![reduce-lodash-footprint](https://i.imgur.com/PZCAxba.png)
 
+### Uglifying has a big impact on bundle size
+![uglified](https://i.imgur.com/yKVMgUO.png)
