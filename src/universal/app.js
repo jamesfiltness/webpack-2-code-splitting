@@ -12,7 +12,7 @@ export default class App extends React.Component {
   async loadOtherComponent() {
     this.Component =
       await import(
-        /* webpackChunkName: "SomeOtherComponent" */
+        /* webpackChunkName: "someothercomponent" */
         './some-other-component'
       );
 

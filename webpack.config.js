@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -13,9 +14,6 @@ module.exports = {
         test: /\.(js)$/,
         loaders: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: ['stage-0', 'react']
-        }
       }
     ],
   },
@@ -39,9 +37,18 @@ module.exports = {
       },
       exclude: [/\.min\.js$/gi] // skip pre-minified libs
     }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0
+    }),
+    // new BundleAnalyzerPlugin() // turn this on to see bundles analyzed at localhost:8888
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
+    chunkFilename: '[name].[chunkhash].bundle.js',
     path: path.join(__dirname, 'dist'),
   }
 }
