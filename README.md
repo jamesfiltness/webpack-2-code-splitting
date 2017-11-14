@@ -31,7 +31,7 @@ Using the ` WebpackBundleAnalyzer` showed that `SomeOtherComponent` bundle size 
 
 * Build for production environment [293a509](https://github.com/jamesfiltness/webpack-2-code-splitting/commit/293a509bae291792b8a52b3eaa53ffdf5a3e33b4)
 
-* Gzip bundles using Webpack's Compression plugin [39a0c45](https://github.com/jamesfiltness/webpack-2-code-splitting/commit/39a0c45f38a26dd5e3d3b06939f0796a9a5575f3). Further reducers file sizes but requires the server to be configured to serve gzipped assets. Nginx would be a good option for this.
+* Gzip bundles using Webpack's Compression plugin [39a0c45](https://github.com/jamesfiltness/webpack-2-code-splitting/commit/39a0c45f38a26dd5e3d3b06939f0796a9a5575f3). Further reducers file sizes but requires the server to be configured to serve gzipped assets. [I've used NGINX](https://github.com/jamesfiltness/webpack-2-code-splitting/blob/master/nginx.conf) for this.
 
 (Currently it seems there is an issue with the compression plugin not producing compressed versions of bundles that are dynamically imported. There is an open issue on github here: https://github.com/webpack-contrib/compression-webpack-plugin/issues/79)
 
@@ -45,5 +45,6 @@ In a real-world app there are other techniques that can be used to further reduc
 * Dead code elimination with [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
 * Replace the React.createElement function with babelHelpers using [Babel's transform-react-inline-elements plugin](https://babeljs.io/docs/plugins/transform-react-inline-elements/)
 * [Agressive Merge plugin](https://github.com/webpack/docs/wiki/list-of-plugins#aggressivemergingplugin)
+* [Module Concatentation Plugin](https://webpack.js.org/plugins/module-concatenation-plugin/)
 
 
